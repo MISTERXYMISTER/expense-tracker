@@ -1,0 +1,5 @@
+{
+  "toolchain": "node",
+  "install_cmd": "npm install",
+  "verify_cmds": ["npm test", "npm run lint", "npm run build"]
+}

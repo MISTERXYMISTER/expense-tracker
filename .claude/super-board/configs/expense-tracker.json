@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "description": "expense-tracker board",
+  "project": {
+    "owner": "MISTERXYMISTER",
+    "title": "expense-tracker Board",
+    "number": 3
+  },
+  "repo": {
+    "path": ".",
+    "remote": "https://github.com/MISTERXYMISTER/expense-tracker"
+  },
+  "base_branch": "main",
+  "columns": [
+    "Backlog",
+    "Ready",
+    "Building",
+    "QA",
+    "Review",
+    "Blocked",
+    "Done"
+  ],
+  "labels": [
+    "qa",
+    "bug",
+    "feature"
+  ],
+  "verify_commands": []
+}
