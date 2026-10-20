@@ -10,6 +10,7 @@ export type AppProps = UseExpensesOptions;
 export const App: React.FC<AppProps> = (props) => {
   const {
     expenses,
+    monthlyExpenses,
     selectedMonth,
     setSelectedMonth,
     monthlyTotal,
@@ -41,6 +42,7 @@ export const App: React.FC<AppProps> = (props) => {
               selectedMonth={selectedMonth}
               onMonthChange={setSelectedMonth}
               totalSpend={monthlyTotal}
+              expenseCount={monthlyExpenses.length}
               breakdown={categoryBreakdown}
               availableMonths={availableMonths}
             />

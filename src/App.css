@@ -201,11 +201,24 @@
   color: #1e40af;
 }
 
+.total-spending-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .total-spending-amount {
   font-size: 2rem;
   font-weight: 800;
   color: #1e3a8a;
   line-height: 1.2;
+}
+
+.total-spending-count {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b82f6;
 }
 
 /* Category Breakdown */
