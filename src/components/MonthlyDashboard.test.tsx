@@ -10,18 +10,20 @@ describe('MonthlyDashboard Component', () => {
     { category: 'Utilities', total: 100, percentage: 50 },
   ];
 
-  it('renders total spending for the selected month and breakdown', () => {
+  it('renders total spending and expense count for the selected month and breakdown', () => {
     render(
       <MonthlyDashboard
         selectedMonth="2026-10"
         onMonthChange={mockMonthChange}
         totalSpend={200.0}
+        expenseCount={3}
         breakdown={sampleBreakdown}
       />
     );
 
     expect(screen.getByText('October 2026')).toBeInTheDocument();
     expect(screen.getByTestId('monthly-total-value')).toHaveTextContent('$200.00');
+    expect(screen.getByTestId('monthly-total-count')).toHaveTextContent('(3 expenses)');
     expect(screen.getByText('Food')).toBeInTheDocument();
     expect(screen.getByText('Utilities')).toBeInTheDocument();
   });

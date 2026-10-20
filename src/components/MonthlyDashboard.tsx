@@ -7,6 +7,7 @@ export interface MonthlyDashboardProps {
   selectedMonth: string;
   onMonthChange: (month: string) => void;
   totalSpend: number;
+  expenseCount?: number;
   breakdown: CategoryBreakdownItem[];
   availableMonths?: string[];
 }
@@ -15,6 +16,7 @@ export const MonthlyDashboard: React.FC<MonthlyDashboardProps> = ({
   selectedMonth,
   onMonthChange,
   totalSpend,
+  expenseCount = 0,
   breakdown,
   availableMonths = [],
 }) => {
@@ -115,9 +117,14 @@ export const MonthlyDashboard: React.FC<MonthlyDashboardProps> = ({
         <span className="total-spending-label">
           Total Spent ({formattedMonth || selectedMonth})
         </span>
-        <span className="total-spending-amount" data-testid="monthly-total-value">
-          {formatCurrency(totalSpend)}
-        </span>
+        <div className="total-spending-row">
+          <span className="total-spending-amount" data-testid="monthly-total-value">
+            {formatCurrency(totalSpend)}
+          </span>
+          <span className="total-spending-count" data-testid="monthly-total-count">
+            ({expenseCount} {expenseCount === 1 ? 'expense' : 'expenses'})
+          </span>
+        </div>
       </div>
 
       <CategoryBreakdown breakdown={breakdown} />
